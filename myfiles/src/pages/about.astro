@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="ABOUT TEXAS DOLLAR FOR" description="ABOUT TEXAS DOLLAR FOR">
+    <div class="stack gap-20">
+        <main class="wrapper about">
+            <Hero
+                title="About Longhorns Crushing Medical Debt"
+                tagline="Our Fight Against Medical Debt."
+            >
+                <img
+                    width="1000"
+                    height="873"
+                    src="/assets/placeholder-image.jpg"
+                    alt="Stats"
+                />
+            </Hero>
+
+            <section>
+                <div class="content">
+                    <p>
+                        Dollar For is a national non-profit organization that eliminates medical debt by empowering patients and advocating on their behalf. Their biggest effort is expressed in their Debt Forgiveness program, in which they enforce the hospital’s Charity Care policies. In order for hospitals to keep their nonprofit status, they have to have programs in place that aid families without incomes large enough to cover their medical expenses, called Charity Care. First, we check a patient’s eligibility. Dollar For then works through a more extensive application with the patient and reach out to the hospitals, advocating for the family and reinforcing that the hospital waives the debt it is legally responsible for.
+                    </p>
+
+                    <p>
+                        At UT Austin, our goal is to form a group of passionate students into an independent UT chapter, mobilized towards eliminating medical debt and helping people navigate the healthcare financial system after a medical crisis!
+                    </p>
+                </div>
+            </section>
+
+            <section class="executive-board">
+				<h2 class="section-title">Executive Board</h2>
+				<ul class="board-list">
+					<li><strong>Guhan Periyasamy</strong> - Co-President</li>
+					<li><strong>Rishit Yokanath</strong> - Co-President</li>
+					<li><strong>Maheen Shujaat</strong> - Treasurer</li>
+					<li><strong>Rahi Mehta</strong> - Secretary</li>
+					<li><strong>Tanisha Madhavan</strong> - Social Chair</li>
+					<li><strong>Vignesh Kulanthaivel</strong> - Volunteer Coordinator</li>
+					<li><strong>Vaishu Marreddy</strong> - Community Partner Coordinator</li>
+				</ul>
+			</section>
+			
+        </main>
+
+        <ContactCTA />
+    </div>
+</BaseLayout>
+
+
+<style>
+	.about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+}
+
+p {
+    text-indent: 2rem;
+    margin-bottom: 1.5rem;
+    width: 80%;
+}
+
+.section-title {
+    font-size: var(--text-2xl);
+    color: var(--gray-0);
+    margin-bottom: 1rem;
+}
+
+.content {
+    grid-column: 2 / 4;
+}
+
+.content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+}
+
+.content :global(a:hover),
+.content :global(a:focus) {
+    text-decoration-color: currentColor;
+}
+
+.executive-board {
+    background-color: var(--gray-800);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.board-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--gray-300);
+    font-size: var(--text-lg);
+}
+
+.board-list li {
+    margin-bottom: 0.5rem;
+}
+.board-list strong {
+    font-weight: bold;
+}
+
+
+@media (min-width: 50em) {
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+        grid-column-start: 2;
+    }
+
+    section {
+        display: contents;
+        font-size: var(--text-lg);
+    }
+}
+
+</style>
