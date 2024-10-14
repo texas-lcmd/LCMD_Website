@@ -11,6 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.14.3"
+    "astro": "^4.14.3",
+    "cors": "^version",
+    "express": "^version",
+    "nodemailer": "^version",
+    "body-parser": "^version"
   }
 }

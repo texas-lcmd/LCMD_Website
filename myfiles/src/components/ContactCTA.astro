@@ -6,18 +6,16 @@ import Icon from './Icon.astro';
 <aside>
 	<section>
 		<div class="content">
-			
 			<div class="subscription-box">
 				<h3>Subscribe to our newsletter • Don’t miss out!</h3>
 				<p>Email*</p>
-				<form action="/subscribe" method="post">
+				<form id="subscription-form" action="/send-email" method="post">
 					<input type="email" name="email" placeholder="Your email address" required>
 					<button type="submit">Subscribe</button>
 				</form>
 			</div>
 		</div>
 	</section>
-	
 </aside>
 
 <style>
