@@ -1,0 +1,12 @@
+title: "LCMD SITE"
+description: "A site built with Jekyll on GitHub Pages for Longhorns Crushing Medical Debt"
+baseurl: "" # Leave empty for user or organization site; add "/repo-name" for project sites
+url: "https://www.crushingmedicaldebt.org" # Custom domain URL
+
+theme: "jekyll-theme-minimal" # Default GitHub Pages theme
+plugins:
+  - jekyll-seo-tag
+  - jekyll-remote-theme # Enables remote theme usage (if needed)
+
+# Optional: If you're using a remote theme outside the standard GitHub Pages themes, specify it here
+# remote_theme: "username/repo-name" # Replace with the remote theme repository
