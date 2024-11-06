@@ -1,0 +1,38 @@
+name: Deploy Astro to GitHub Pages
+
+# Trigger this workflow on push to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check out the code
+      - name: Check out the code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js (matching the version in your project)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18' # or your project’s Node version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the site with Astro
+      - name: Build with Astro
+        run: npm run build
+
+      # Step 5: Deploy to GitHub Pages (push to gh-pages branch)
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+          git add dist
+          git commit -m "Deploy Astro site" || exit 0
+          git push -f origin `gh-pages`
